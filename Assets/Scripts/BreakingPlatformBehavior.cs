@@ -19,12 +19,13 @@ public class BreakingPlatformBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        DeactivatePlatform();
+        StartCoroutine(DeactivatePlatform(col));
     }
 
 
-    IEnumerator DeactivatePlatform()
+    IEnumerator DeactivatePlatform(Collision2D col)
     {
+        Debug.Log("collided with"+ col.gameObject);
         yield return new WaitForSeconds(breakingTime);
         gameObject.SetActive(false);
     }

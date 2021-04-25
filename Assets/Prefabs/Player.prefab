@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1051446642}
   - component: {fileID: 1051446643}
   - component: {fileID: 6134853527006982759}
-  - component: {fileID: 1602911043}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -170,23 +169,6 @@ MonoBehaviour:
   gravityModifier: 2
   maxSpeed: 7
   jumpTakeOffSpeed: 15
---- !u!114 &1602911043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97617024981600943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7d76d4b381782a4bad0eb47d2ac3a82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  isSafe: 1
-  isDead: 0
-  lastCheckpoint: {fileID: 0}
 --- !u!1 &7767919286552724582
 GameObject:
   m_ObjectHideFlags: 0
