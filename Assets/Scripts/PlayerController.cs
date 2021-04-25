@@ -1,25 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : PhysicsObject
 {
-    [SerializeField] float Speed = 10;
+    public float maxSpeed = 7;
+    public float jumpTakeOffSpeed = 7;
 
-    Rigidbody2D m_Rigidbody;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
     
-    void Start()
+    void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
-
-    void FixedUpdate()
+    protected override void ComputeVelocity()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        Vector2 move = Vector2.zero;
 
-        var position = m_Rigidbody.position;
-        position.x += horizontalInput * Speed * Time.fixedDeltaTime;
-        
-        m_Rigidbody.MovePosition(position);
+        move.x = Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            velocity.y = jumpTakeOffSpeed;
+        }
+        else if (Input.GetButtonUp("Jump"))
+        {
+            if (velocity.y > 0)
+            {
+                velocity.y = velocity.y * 0.5f;
+            }
+        }
+
+        bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+        if (flipSprite)
+        {
+            spriteRenderer.flipX = !spriteRenderer.flipX;
+        }
+
+        // TODO ALBERT: set these on the Animator
+        //animator.SetBool("grounded", grounded);
+        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+
+        targetVelocity = move * maxSpeed;
     }
 }
