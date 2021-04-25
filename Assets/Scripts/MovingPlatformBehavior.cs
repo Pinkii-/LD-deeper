@@ -22,7 +22,7 @@ public class MovingPlatformBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (transform.position == endPosition)
@@ -56,15 +56,16 @@ public class MovingPlatformBehavior : MonoBehaviour
     //Parent player so it moves along with the platform
     void OnCollisionEnter2D(Collision2D col)
     {
-        //col.gameObject.transform.SetParent(gameObject.transform, true);
-        col.gameObject.transform.parent = gameObject.transform;
+        col.collider.transform.SetParent(transform);
+        //col.gameObject.transform.SetParent(gameObject.transform);
+        //col.gameObject.transform.parent = gameObject.transform;
         //col.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
     }
 
 
     void OnCollisionExit2D(Collision2D col)
     {
-        col.gameObject.transform.parent = null;
+        col.transform.parent = null;
     }
 
 

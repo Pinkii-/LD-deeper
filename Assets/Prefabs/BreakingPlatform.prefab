@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7166688441739568773}
   - component: {fileID: 7166688441739568772}
   - component: {fileID: 3411748434453865629}
+  - component: {fileID: 501470506}
   m_Layer: 0
   m_Name: BreakingPlatform
   m_TagString: Untagged
@@ -110,7 +111,7 @@ MonoBehaviour:
   - {x: 5, y: 0, z: 0}
   m_ShapePathHash: 1117800437
   m_Mesh: {fileID: 0}
-  m_InstanceId: -1226
+  m_InstanceId: -50274
 --- !u!61 &7166688441739568772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -150,3 +151,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakingTime: 5
+--- !u!111 &501470506
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166688441739568824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: aea5a22f83dac51499b4343bc1389851, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: aea5a22f83dac51499b4343bc1389851, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
