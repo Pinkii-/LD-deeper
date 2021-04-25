@@ -12,6 +12,7 @@ public class CheckpointBehavior : MonoBehaviour
     }
 
     public CheckpointType type;
+    public bool isLit = false;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,6 +20,7 @@ public class CheckpointBehavior : MonoBehaviour
         {
             other.GetComponent<PlayerHealth>().lastCheckpoint = this.gameObject; 
             other.GetComponent<PlayerHealth>().isSafe = true;
+            LitCheckpoint();
         }
 
 
@@ -39,4 +41,13 @@ public class CheckpointBehavior : MonoBehaviour
         if (other.GetComponent<PlayerHealth>() != null) 
             other.GetComponent<PlayerHealth>().isSafe = false;
     }
+
+
+    private void LitCheckpoint() 
+    {
+        isLit = true;
+        Transform lamp = transform.Find("lit_lamp");
+        lamp.gameObject.SetActive(true); 
+    }
+
 }

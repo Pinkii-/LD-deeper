@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 public class PlayerHealth : MonoBehaviour
@@ -10,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public bool isSafe = true;
     public bool isDead = false;
     public GameObject lastCheckpoint;
+    public Slider slider;
 
     bool healthdrop;
 
@@ -41,7 +44,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
-        
+
+        slider.value = currentHealth / 100f;
+
     }
 
     private void RestoreHealth() 
