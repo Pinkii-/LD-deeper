@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,11 +65,17 @@ public class MovingPlatformBehavior : MonoBehaviour
     //Parent player so it moves along with the platform
     void OnCollisionEnter2D(Collision2D col)
     {
-        col.transform.parent = transform;
+        if (col.transform.CompareTag("Player"))
+        {
+            col.transform.parent = transform;
+        }
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-        col.transform.parent = null;
+        if (col.transform.CompareTag("Player"))
+        {
+            col.transform.parent = null;
+        }
     }
 }

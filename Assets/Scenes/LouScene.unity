@@ -169,6 +169,7 @@ MonoBehaviour:
   Levels:
   - {fileID: 2951961190046693631, guid: 6e885d3de87a4415883ffc1455b98e37, type: 3}
   - {fileID: 55490476374765481, guid: 2b29721062ffd4c588b10857c65898ab, type: 3}
+  LevelsGoal: 2
 --- !u!1 &717053666
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +541,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 97617024981600943, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 97617024981600943, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3235720223127950036, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
