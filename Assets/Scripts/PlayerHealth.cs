@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject lastCheckpoint;
     public Slider slider;
     public SpriteRenderer[] sprites;
+    public float decreaseSpeed = 1f;
 
     private Animator animator;
     bool healthdrop;
@@ -67,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator ReduceHealth() 
     {
         yield return new WaitForSeconds(1);
-        CurrentHealth -= 1f;
+        CurrentHealth -= decreaseSpeed;
         healthdrop = false;
     }
 
