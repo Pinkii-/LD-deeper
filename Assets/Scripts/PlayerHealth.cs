@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public bool isDead = false;
     public GameObject lastCheckpoint;
     public Slider slider;
+    public SpriteRenderer[] sprites;
 
     private Animator animator;
     bool healthdrop;
@@ -50,6 +51,8 @@ public class PlayerHealth : MonoBehaviour
         }
 
         slider.value = currentHealth / 100f;
+        UpdateCharacterLight(currentHealth / 100f);
+
 
     }
 
@@ -81,4 +84,19 @@ public class PlayerHealth : MonoBehaviour
         animator.SetBool("isDead", false);
         Debug.Log("You died & rebirth");
     }
+
+
+
+    private void UpdateCharacterLight(float value) 
+    {
+        Debug.Log( "Update?" + value);
+        for (int i = 0;  i < sprites.Length; i++) {
+            sprites[i].color= new Color (sprites[i].color.r, sprites[i].color.g, sprites[i].color.b, value);
+
+        }
+        
+        //Color temp = gameObject.transform.Find("arm_light").GetComponent<SpriteRenderer>().color;
+        //temp.a = 0f;
+    }
+
 }
