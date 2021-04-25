@@ -15,10 +15,14 @@ public class CheckpointBehavior : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-       if (other.GetComponent<PlayerHealth>() != null) 
-           other.GetComponent<PlayerHealth>().isSafe = true;
+        if (other.GetComponent<PlayerHealth>() != null) 
+        {
+            other.GetComponent<PlayerHealth>().lastCheckpoint = this.gameObject; 
+            other.GetComponent<PlayerHealth>().isSafe = true;
+        }
 
-       switch (type)
+
+        switch (type)
        {
            case CheckpointType.NextLevel:
                LevelsController.Instance.GoLevelDown();
