@@ -64,7 +64,7 @@ public class MovingPlatformBehavior : MonoBehaviour
     //Parent player so it moves along with the platform
     void OnCollisionEnter2D(Collision2D col)
     {
-        col.transform.SetParent(transform);
+        col.transform.parent = transform;
     }
 
     void OnCollisionExit2D(Collision2D col)

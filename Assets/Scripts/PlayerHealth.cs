@@ -89,7 +89,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void UpdateCharacterLight(float value) 
     {
-        Debug.Log( "Update?" + value);
+        //Debug.Log( "Update?" + value);
         for (int i = 0;  i < sprites.Length; i++) {
             sprites[i].color= new Color (sprites[i].color.r, sprites[i].color.g, sprites[i].color.b, value);
 
