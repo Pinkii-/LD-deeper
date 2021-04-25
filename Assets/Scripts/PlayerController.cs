@@ -6,9 +6,11 @@ public class PlayerController : PhysicsObject
 {
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 7;
-
+    public ParticleSystem runParticles;
+    public ParticleSystem jumpParticles;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private bool startedWalking = false;
     
     void Awake()
     {
@@ -25,6 +27,7 @@ public class PlayerController : PhysicsObject
         if (Input.GetButtonDown("Jump") && grounded)
         {
             velocity.y = jumpTakeOffSpeed;
+            jumpParticles.Play();
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -44,22 +47,27 @@ public class PlayerController : PhysicsObject
 
         if (move.x < 0f && character.transform.localScale.x > 0f)
         {
-            Debug.Log(move.x + " y " + character.transform.localScale.x);
-
             character.transform.localScale = new Vector3(character.transform.localScale.x * -1f, character.transform.localScale.y, character.transform.localScale.z);
-            //character.localScale *= new Vector3(-1, 1, 1);
-            //transform.localScale = transform.parent.InverseTransformPoint(Vector3.right);
-
-
         }
         else if (move.x > 0f && character.transform.localScale.x < 0f) 
         {
             character.transform.localScale = new Vector3(character.transform.localScale.x * -1f, character.transform.localScale.y, character.transform.localScale.z);
         }
 
-        // TODO ALBERT: set these on the Animator
+        //Animation values
         animator.SetBool("isMoving", move.x != 0);
         animator.SetBool("isJumping", velocity.y != 0);
+
+        if (move.x == 0) 
+        {
+            startedWalking = true;
+        }
+
+        if (startedWalking && move.x != 0 && velocity.y == 0) 
+        {
+            runParticles.Play();
+            startedWalking = false;
+        }
 
 
 
