@@ -14,17 +14,13 @@ public class PlayerHealth : MonoBehaviour
     public GameObject lastCheckpoint;
     public Slider slider;
 
-    private Animator animator;
     bool healthdrop;
-
-
 
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
         RestoreHealth();
     }
 
@@ -46,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
         //If Health reaches 0 go back to the last checkpoint
         if (currentHealth <= 0) 
         {
-            StartCoroutine( Die());
+            Die();
         }
 
         slider.value = currentHealth / 100f;
@@ -69,16 +65,9 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //The moment the player enters in contact with the Checkpoint all values are restored.
-    public IEnumerator Die() 
-    {
+    public void Die() {
         isDead = true;
-        animator.SetBool("isDead", true);
-        //TODO: Stop controller for 2 secs.
-        this.GetComponent<PlayerController>().enabled = false;
-        yield return new WaitForSeconds(2);
         transform.position = lastCheckpoint.transform.position;
-        this.GetComponent<PlayerController>().enabled = true;
-        animator.SetBool("isDead", false);
         Debug.Log("You died & rebirth");
     }
 }
