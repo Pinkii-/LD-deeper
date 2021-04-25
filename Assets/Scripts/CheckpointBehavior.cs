@@ -4,32 +4,35 @@ using UnityEngine;
 
 public class CheckpointBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum CheckpointType
     {
-        
+        Default,
+        NextLevel,
+        PrevLevel
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public CheckpointType type;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-       if(other.GetComponent<PlayerHealth>() != null)
-            other.GetComponent<PlayerHealth>().isSafe = true; 
+       if (other.GetComponent<PlayerHealth>() != null) 
+           other.GetComponent<PlayerHealth>().isSafe = true;
+
+       switch (type)
+       {
+           case CheckpointType.NextLevel:
+               LevelsController.Instance.GoLevelDown();
+               break;
+           
+           case CheckpointType.PrevLevel:
+               LevelsController.Instance.GoLevelUp();
+               break;
+       }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerHealth>() != null)
+        if (other.GetComponent<PlayerHealth>() != null) 
             other.GetComponent<PlayerHealth>().isSafe = false;
-
     }
-
-
-
-
 }
