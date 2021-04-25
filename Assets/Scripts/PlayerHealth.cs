@@ -51,8 +51,8 @@ public class PlayerHealth : MonoBehaviour
             StartCoroutine( Die());
         }
 
-        slider.value = currentHealth / 100f;
-        UpdateCharacterLight(currentHealth / 100f);
+        slider.value = currentHealth / maxHealth;
+        UpdateCharacterLight(currentHealth / maxHealth);
 
 
     }
