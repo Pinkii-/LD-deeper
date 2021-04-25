@@ -19,7 +19,7 @@ public class SpikeBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PlayerHealth>() != null)
-            other.GetComponent<PlayerHealth>().Die();
+            StartCoroutine( other.GetComponent<PlayerHealth>().Die());
     }
 
 

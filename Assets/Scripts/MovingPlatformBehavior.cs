@@ -11,12 +11,6 @@ public class MovingPlatformBehavior : MonoBehaviour
     public bool towardsB;
     private Vector3 startPosition;
     private Vector3 endPosition;
-    protected Rigidbody2D rb2d;
-    
-    void OnEnable()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
 
     void Start()
     {
@@ -52,7 +46,8 @@ public class MovingPlatformBehavior : MonoBehaviour
 
         while (obj.transform.position != target)
         {
-            rb2d.position = Vector3.Lerp(rb2d.position, target, (time / Vector3.Distance(rb2d.position, target)) * speed);
+            obj.transform.position = Vector3.Lerp(startPosition, target, (time / Vector3.Distance(startPosition, target)) * speed);
+            // this.GetComponent<Rigidbody2D>().MovePosition(Vector2.Lerp(startPosition, target, (time / Vector2.Distance(startPosition, target)) * speed));
             time += Time.deltaTime;
             yield return null;
         }
@@ -61,7 +56,6 @@ public class MovingPlatformBehavior : MonoBehaviour
     //Parent player so it moves along with the platform
     void OnCollisionEnter2D(Collision2D col)
     {
-        col.gameObject.transform.SetParent(gameObject.transform, true);
         //col.collider.transform.SetParent(transform);
         //col.gameObject.transform.SetParent(gameObject.transform);
         //col.gameObject.transform.parent = gameObject.transform;
@@ -71,6 +65,8 @@ public class MovingPlatformBehavior : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
-        col.gameObject.transform.parent = null;
+        col.transform.parent = null;
     }
+
+
 }
