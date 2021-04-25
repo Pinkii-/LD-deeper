@@ -13,13 +13,12 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        GoToLevel(0);
+        ScrollTo(0);
     }
 
-    public void GoToLevel(int level)
+    public void ScrollTo(float y)
     {
-        float targetY = LevelsController.Instance.GetLevelY(level);
-        _targetPos = new Vector3(transform.position.x, targetY, transform.position.z);
+        _targetPos = new Vector3(transform.position.x, y, transform.position.z);
     }
     
     private void OnGUI()
