@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1051446642}
   - component: {fileID: 1051446643}
   - component: {fileID: 6134853527006982759}
+  - component: {fileID: 1602911043}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -125,7 +126,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1051446643
 BoxCollider2D:
@@ -169,6 +170,24 @@ MonoBehaviour:
   gravityModifier: 2
   maxSpeed: 7
   jumpTakeOffSpeed: 15
+--- !u!114 &1602911043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97617024981600943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d76d4b381782a4bad0eb47d2ac3a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  isSafe: 1
+  isDead: 0
+  lastCheckpoint: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!1 &7767919286552724582
 GameObject:
   m_ObjectHideFlags: 0
