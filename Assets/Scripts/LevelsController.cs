@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
+using Object = System.Object;
 
 public class LevelsController : MonoBehaviour
 {
+    public List<Transform> Levels;
+    [ReadOnly] private int NextLevel = 0;
+    [ReadOnly] private int NextLevelUnclamped = 0;
+    
     private static LevelsController _instance;
-
-    [ReadOnly] public List<Transform> Levels;
-    [ReadOnly] public int CurrentLevel = 0;
-
+    
     public static LevelsController Instance
     {
         get
@@ -31,56 +33,56 @@ public class LevelsController : MonoBehaviour
 
     private void Start()
     {
-        foreach (Transform element in transform)
-        {
-            if (element.name.Contains("Level_"))
-            {
-                Levels.Add(element);
-            }
-        }
-        
-        RevealLevel(CurrentLevel);
+        LoadNextLevel();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            GoLevelUp();
-        }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             GoLevelDown();
         }
     }
 
+    public void LoadNextLevel()
+    {
+        float levelY = 0f;
+
+        if (transform.childCount == 2)
+        {
+            var toDelete = transform.GetChild(0);
+            toDelete.parent = null;
+            Destroy(toDelete.gameObject);
+        }
+        
+        if (transform.childCount == 1)
+        {
+            var prevLevelY = Mathf.Abs(transform.GetChild(0).position.y);
+            var prevLevelH = transform.GetChild(0).Find("Background").GetComponent<SpriteRenderer>().size.y;
+            levelY = prevLevelY + prevLevelH;
+        }
+
+        var level = Instantiate(Levels[NextLevel], 
+            new Vector3(0, -levelY, 0), 
+            Quaternion.identity, 
+            gameObject.transform);
+
+        level.name = "Level_" + NextLevelUnclamped;
+        
+        NextLevel = (NextLevel + 1) % NumLevels;
+        NextLevelUnclamped++;
+    }
+
     public void GoLevelDown()
     {
-        if (CurrentLevel < NumLevels - 1)
+        LoadNextLevel();
+
+        CameraController camCtrl = Camera.main.GetComponent<CameraController>();
+        if (camCtrl)
         {
-            CameraController camCtrl = Camera.main.GetComponent<CameraController>();
-            if (camCtrl)
-            {
-                HideLevel(CurrentLevel);
-                CurrentLevel++;
-                camCtrl.GoToLevel(CurrentLevel);
-                RevealLevel(CurrentLevel);
-            }
-        }
-    }
-    
-    public void GoLevelUp()
-    {
-        if (CurrentLevel > 0)
-        {
-            CameraController camCtrl = Camera.main.GetComponent<CameraController>();
-            if (camCtrl)
-            {
-                HideLevel(CurrentLevel);
-                CurrentLevel--;
-                camCtrl.GoToLevel(CurrentLevel);
-                RevealLevel(CurrentLevel);
-            }
+            //HideLevel(CurrentLevel);
+            camCtrl.ScrollTo(GetLevelY(NextLevelUnclamped - 1) + 5);
+            //RevealLevel(CurrentLevel);
         }
     }
 
@@ -88,6 +90,7 @@ public class LevelsController : MonoBehaviour
 
     public float GetLevelY(int levelIndex)
     {
+        return transform.Find("Level_" + levelIndex).position.y;
         return Levels[GetClampedLevelIndex(levelIndex)].position.y;
     }
 

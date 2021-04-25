@@ -29,10 +29,6 @@ public class CheckpointBehavior : MonoBehaviour
            case CheckpointType.NextLevel:
                LevelsController.Instance.GoLevelDown();
                break;
-           
-           case CheckpointType.PrevLevel:
-               LevelsController.Instance.GoLevelUp();
-               break;
        }
     }
 
