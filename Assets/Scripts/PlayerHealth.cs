@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public bool isSafe = true;
+    public bool isDead = false;
+    public GameObject lastCheckpoint;
+
     bool healthdrop;
 
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
@@ -15,8 +18,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentHealth = maxHealth;
-        healthdrop = false;
+        RestoreHealth();
     }
 
     // Update is called once per frame
@@ -25,17 +27,29 @@ public class PlayerHealth : MonoBehaviour
         //If in checkpoint life is restored, otherwise it goes down.
         if (isSafe)
         {
-            CurrentHealth = maxHealth;
+            RestoreHealth();
         }
         else if (!healthdrop)
         {
             healthdrop = true;
             StartCoroutine(ReduceHealth());
         }
+
+
+        //If Health reaches 0 go back to the last checkpoint
+        if (currentHealth <= 0) 
+        {
+            Die();
+        }
         
     }
 
-
+    private void RestoreHealth() 
+    {
+        CurrentHealth = maxHealth;
+        healthdrop = false;
+        isDead = false;
+    }
 
     // Timer reducing healthbar every X seconds.
     IEnumerator ReduceHealth() 
@@ -43,5 +57,12 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(1);
         CurrentHealth -= 1f;
         healthdrop = false;
+    }
+
+    //The moment the player enters in contact with the Checkpoint all values are restored.
+    public void Die() {
+        isDead = true;
+        transform.position = lastCheckpoint.transform.position;
+        Debug.Log("You died & rebirth");
     }
 }

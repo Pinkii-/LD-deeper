@@ -18,13 +18,18 @@ public class CheckpointBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        other.GetComponent<PlayerHealth>().isSafe = true; 
+       if(other.GetComponent<PlayerHealth>() != null)
+            other.GetComponent<PlayerHealth>().isSafe = true; 
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        other.GetComponent<PlayerHealth>().isSafe = false;
+        if (other.GetComponent<PlayerHealth>() != null)
+            other.GetComponent<PlayerHealth>().isSafe = false;
 
     }
+
+
+
 
 }
