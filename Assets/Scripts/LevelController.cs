@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelRevealer : MonoBehaviour
+public class LevelController : MonoBehaviour
 {
-    public float effectDuration = 5f;
+    public float cameraBottomOffset = 5f;
+    private float effectDuration = 5f;
     
     private SpriteRenderer _renderer;
     private bool _visible = false;

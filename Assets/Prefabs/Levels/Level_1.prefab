@@ -286,6 +286,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -402114089228536302, guid: 9ffad0a8f3746442cb540f8646168b22, type: 3}
+      propertyPath: cameraBottomOffset
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 173180826729499512, guid: 9ffad0a8f3746442cb540f8646168b22, type: 3}
       propertyPath: m_Mesh
       value: 

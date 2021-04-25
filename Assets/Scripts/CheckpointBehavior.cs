@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CheckpointBehavior : MonoBehaviour
 {
+    public float timeToGoDown = 3f;
+    
     public enum CheckpointType
     {
         Default,
-        NextLevel,
-        PrevLevel
+        NextLevel
     }
 
     public CheckpointType type;
@@ -16,20 +17,23 @@ public class CheckpointBehavior : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!isLit && type == CheckpointType.NextLevel)
+        {
+            StartCoroutine(DeferredGoLevelDown());
+        }
+        
         if (other.GetComponent<PlayerHealth>() != null) 
         {
             other.GetComponent<PlayerHealth>().lastCheckpoint = this.gameObject; 
             other.GetComponent<PlayerHealth>().isSafe = true;
             LitCheckpoint();
         }
+    }
 
-
-        switch (type)
-       {
-           case CheckpointType.NextLevel:
-               LevelsController.Instance.GoLevelDown();
-               break;
-       }
+    private IEnumerator DeferredGoLevelDown()
+    {
+        yield return new WaitForSeconds(timeToGoDown);
+        LevelsController.Instance.GoLevelDown();
     }
 
     private void OnTriggerExit2D(Collider2D other)
