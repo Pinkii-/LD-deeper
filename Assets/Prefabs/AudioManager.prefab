@@ -87,8 +87,8 @@ MonoBehaviour:
     outputAudioMixerGroup: {fileID: -5004093850179023188, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
     source: {fileID: 0}
   - name: mainTheme
-    clip: {fileID: 8300000, guid: 2e42be1b7f6e3fe41a28ec05c5ac8a5e, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 6438296b016127b42b857cec1c1d9a8c, type: 3}
+    volume: 0.8
     pitch: 1
     loop: 1
     outputAudioMixerGroup: {fileID: -5004093850179023188, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
