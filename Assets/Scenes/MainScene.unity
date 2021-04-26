@@ -552,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_UseNormalMap
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_ShadowIntensity
