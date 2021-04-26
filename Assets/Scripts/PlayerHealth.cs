@@ -98,7 +98,7 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(secondsDead);
         }
 
-        transform.position = lastCheckpoint.transform.position + new Vector3(1, 0 ,0);
+        //transform.position = lastCheckpoint.transform.position + new Vector3(1, 0 ,0);
         levelcontroller.RestoreLevel();
         this.GetComponent<PlayerController>().enabled = true;
         transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;

@@ -48,7 +48,7 @@ public class LevelsController : MonoBehaviour
         NextLevel = 0;
         NextLevelUnclamped = 0;
         LoadNextLevel();
-        
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("mainTheme");
     }
     
     public void LoadNextLevel()
@@ -152,6 +152,8 @@ public class LevelsController : MonoBehaviour
 
             yield return new WaitForSeconds(0);
         }
+
+        Player.GetComponent<Rigidbody2D>().MovePosition(new Vector2(0.001f, 0));
     }
 
     public int NumLevels => Levels.Count;
