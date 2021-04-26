@@ -48,7 +48,7 @@ public class LevelsController : MonoBehaviour
         NextLevel = 0;
         NextLevelUnclamped = 0;
         LoadNextLevel();
-        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("mainTheme");
+        AudioManager.audioManagerRef.PlaySound("mainTheme");
     }
     
     public void LoadNextLevel()
