@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckpointBehavior : MonoBehaviour
 {
-    public float timeToGoDown = 3f;
+    public float timeToGoDown = 1f;
     
     public enum CheckpointType
     {
