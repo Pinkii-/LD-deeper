@@ -20,6 +20,8 @@ public class CheckpointBehavior : MonoBehaviour
         if (!isLit && type == CheckpointType.NextLevel)
         {
             StartCoroutine(DeferredGoLevelDown());
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("fireLight");
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("fireLoop");
         }
         
         if (other.GetComponent<PlayerHealth>() != null) 
@@ -48,8 +50,6 @@ public class CheckpointBehavior : MonoBehaviour
         isLit = true;
         Transform lamp = transform.Find("lit_lamp");
         lamp.gameObject.SetActive(true);
-        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("fireLight");
-        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("fireLoop");
     }
 
 }
