@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97617024981600943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6545795, y: 2.1996179, z: -22.81595}
+  m_LocalPosition: {x: -0.6545795, y: 2.1996179, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1572799084186846121}
@@ -127,7 +127,7 @@ MonoBehaviour:
   minGroundNormalY: 0.65
   gravityModifier: 2
   maxSpeed: 7
-  jumpTakeOffSpeed: 15
+  jumpTakeOffSpeed: 13
   runParticles: {fileID: 8632831513695352984}
   jumpParticles: {fileID: 6864787938608231462}
 --- !u!114 &1602911043
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d76d4b381782a4bad0eb47d2ac3a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 80
+  maxHealth: 20
   currentHealth: 0
   isSafe: 1
   isDead: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   - {fileID: 751483218849813541}
   - {fileID: 807923540711480443}
   decreaseSpeed: 1
-  secondsDead: 2
+  secondsDead: 1
 --- !u!114 &2568942644229515004
 MonoBehaviour:
   m_ObjectHideFlags: 0
