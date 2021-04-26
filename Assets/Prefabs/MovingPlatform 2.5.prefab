@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107993111330258388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.02, y: -0.47, z: 0}
+  m_LocalPosition: {x: -0.001, y: -0.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2453700842399714128}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 5, y: 2.56}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7487899043356604457}
   - component: {fileID: 7487899043356604460}
   m_Layer: 0
-  m_Name: MovingPlatform
+  m_Name: MovingPlatform 2.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 5, y: 1}
+  m_Size: {x: 2.56, y: 1}
   m_AdaptiveModeThreshold: 0.229
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -197,7 +197,7 @@ MonoBehaviour:
   - {x: 5, y: 0, z: 0}
   m_ShapePathHash: 1117800437
   m_Mesh: {fileID: 0}
-  m_InstanceId: 140710
+  m_InstanceId: 102022
 --- !u!61 &2453700842399714130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,13 +216,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 5, y: 1}
+    newSize: {x: 2.56, y: 1}
     adaptiveTilingThreshold: 0.229
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 1}
+  m_Size: {x: 2.56, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &7487899043356604457
 Rigidbody2D:
@@ -260,7 +260,6 @@ MonoBehaviour:
   moveSpeed: 2
   platformA: {fileID: 7487899042223225627}
   platformB: {fileID: 7487899041885327355}
-  towardsB: 0
 --- !u!1 &5999733757734992689
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +285,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999733757734992689}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.016, y: 0.254, z: 0}
+  m_LocalPosition: {x: 0.002, y: 0.254, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2453700842399714128}
@@ -337,7 +336,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 5, y: 2.56}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -355,7 +354,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointB
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -385,7 +384,7 @@ GameObject:
   m_Layer: 0
   m_Name: PointA
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

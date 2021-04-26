@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 3411748434453865629}
   - component: {fileID: 501470506}
   m_Layer: 0
-  m_Name: BreakingPlatform
+  m_Name: BreakingPlatform 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   - {x: 5, y: 0, z: 0}
   m_ShapePathHash: 1117800437
   m_Mesh: {fileID: 0}
-  m_InstanceId: 140606
+  m_InstanceId: 124034
 --- !u!61 &7166688441739568772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ BoxCollider2D:
     adaptiveTiling: 1
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 1}
+  m_Size: {x: 3.86, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &3411748434453865629
 MonoBehaviour:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153dad823dece754c9156027c9e821af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakingTime: 2
+  breakingTime: 1
 --- !u!111 &501470506
 Animation:
   m_ObjectHideFlags: 0
