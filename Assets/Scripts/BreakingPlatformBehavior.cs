@@ -28,6 +28,7 @@ public class BreakingPlatformBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         StartCoroutine(DeactivatePlatform(col));
+        AudioManager.audioManagerRef.PlaySound("platformBreak");
     }
 
 
