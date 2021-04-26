@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.UI;
 
 
@@ -109,13 +110,16 @@ public class PlayerHealth : MonoBehaviour
     private void UpdateCharacterLight(float value) 
     {
         //Debug.Log( "Update?" + value);
-        for (int i = 0;  i < sprites.Length; i++) {
+        /*for (int i = 0;  i < sprites.Length; i++) {
             sprites[i].color= new Color (sprites[i].color.r, sprites[i].color.g, sprites[i].color.b, value);
 
-        }
+        }*/
         
         //Color temp = gameObject.transform.Find("arm_light").GetComponent<SpriteRenderer>().color;
         //temp.a = 0f;
-    }
 
+        var light = transform.GetComponentInChildren<Light2D>();
+        light.pointLightOuterRadius = Mathf.Lerp(2.0f, 4.66f,value);
+        light.color = Color.Lerp(new Color(1.0f, 0.1f, 0.1f), new Color(1, 0.9f, 0.55f), value);
+    }
 }
