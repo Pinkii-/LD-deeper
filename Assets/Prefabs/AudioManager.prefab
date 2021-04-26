@@ -43,4 +43,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757592a053b04d140a01aabe78a6f1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: spike
+    clip: {fileID: 8300000, guid: 24fb09d9e4610c843af6d934a55aeea4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}
+  - name: fireLight
+    clip: {fileID: 8300000, guid: cf37c41ff4b08ef419aca7a299556c5e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}
+  - name: playerLand
+    clip: {fileID: 0}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}
+  - name: platformMove
+    clip: {fileID: 8300000, guid: 07ec1a8f941d9974581cfed7ab6940be, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}
+  - name: fireLoop
+    clip: {fileID: 8300000, guid: 16e6f7e4da5108f429feaa53e1081855, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}
+  - name: melodyEnding
+    clip: {fileID: 8300000, guid: e434eee3fdf85244cb65cb5e6a67337d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    outputAudioMixerGroup: {fileID: -5004093850179023188, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}
+  - name: mainTheme
+    clip: {fileID: 8300000, guid: 16e6f7e4da5108f429feaa53e1081855, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    outputAudioMixerGroup: {fileID: -5004093850179023188, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
+    source: {fileID: 0}

@@ -47,7 +47,9 @@ public class CheckpointBehavior : MonoBehaviour
     {
         isLit = true;
         Transform lamp = transform.Find("lit_lamp");
-        lamp.gameObject.SetActive(true); 
+        lamp.gameObject.SetActive(true);
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("fireLight");
+        AudioManager.audioManagerRef.PlaySoundWithRandomPitch("fireLoop");
     }
 
 }
