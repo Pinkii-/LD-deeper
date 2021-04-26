@@ -6,7 +6,7 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager audioManagerRef = null;
+    public static AudioManager audioManagerRef;
 
     // list of gameplay sounds
     public Sound[] sounds;
