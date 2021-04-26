@@ -47,8 +47,8 @@ public class EndingBehavior : MonoBehaviour
             
             AudioManager.audioManagerRef.PlaySound("melodyEnding");
 
-            Camera.main.GetComponent<CameraController>().zoomSpeed = 0.1f;
-            Camera.main.GetComponent<CameraController>().ZoomTo(8f);
+            Camera.main.GetComponent<CameraController>().zoomSpeed = 0.02f;
+            Camera.main.GetComponent<CameraController>().ZoomTo(1f);
             
             StartCoroutine(GrowingLight());
         }

@@ -129,7 +129,7 @@ public class LevelsController : MonoBehaviour
         
         Player.GetComponent<PlayerHealth>().isSafe = true;
         
-        StartCoroutine(MovePlayer());
+        //StartCoroutine(MovePlayer());
 
         NextLevel = (NextLevel + 1) % NumLevels;
         NextLevelUnclamped++;
