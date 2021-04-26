@@ -126,33 +126,29 @@ public class LevelsController : MonoBehaviour
 
         level.name = "Level_" + NextLevelUnclamped;
         
-        // Disable level elements and platforms (VERY BAD DONE)
-        transform.GetChild(0).Find("Elements").gameObject.SetActive(false);
-        transform.GetChild(0).Find("Platforms").gameObject.SetActive(false);
-        transform.GetChild(0).Find("Checkpoints").gameObject.SetActive(false);
+        Player.GetComponent<PlayerHealth>().isSafe = true;
         
-        GameObject.Find("Slider").SetActive(false);
-        
-        Camera.main.GetComponent<CameraController>().ZoomTo(1f);
-
-        StartCoroutine(GrowingLight());
+        StartCoroutine(MovePlayer());
 
         NextLevel = (NextLevel + 1) % NumLevels;
         NextLevelUnclamped++;
     }
-
-    private IEnumerator GrowingLight()
+    
+    // ALBERT: ÑAPA ENORME
+    private IEnumerator MovePlayer()
     {
-        float initialGlowRadius = Player.GetComponentInChildren<Light2D>().pointLightOuterRadius;
+        float initialX = Player.transform.position.x;
         float time = 0f;
-        
-        yield return new WaitForSeconds(4f);
-        
-        while (Player.GetComponentInChildren<Light2D>().pointLightOuterRadius < 10f)
+
+        while (Player.transform.position.x > -5.0f)
         {
-            Player.GetComponentInChildren<Light2D>().pointLightOuterRadius = Mathf.Lerp(initialGlowRadius, 20f, time / 3f);
-            time += Time.deltaTime;
+            Player.GetComponentInChildren<Animator>().SetBool("isMoving", true);
             
+            float newX = Mathf.Lerp(initialX, -5.0f, time / 1.5f);
+            Player.GetComponent<Rigidbody2D>().position = new Vector3(newX, Player.transform.position.y, Player.transform.position.z);
+            
+            time += Time.deltaTime;
+
             yield return new WaitForSeconds(0);
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 public class EndingBehavior : MonoBehaviour
@@ -41,12 +42,31 @@ public class EndingBehavior : MonoBehaviour
             treelight.SetActive(true);
             other.GetComponentInChildren<Animator>().SetBool("isDead", true);
             StartCoroutine(ActivateUI());
-         
 
+            GameObject.Find("Slider").SetActive(false);
+
+            Camera.main.GetComponent<CameraController>().zoomSpeed = 0.1f;
+            Camera.main.GetComponent<CameraController>().ZoomTo(8f);
+            
+            StartCoroutine(GrowingLight());
         }
-
     }
 
+    private IEnumerator GrowingLight()
+    {
+        float initialGlowRadius = LevelsController.Instance.Player.GetComponentInChildren<Light2D>().pointLightOuterRadius;
+        float time = 0f;
+
+        yield return new WaitForSeconds(1.5f);
+        
+        while (LevelsController.Instance.Player.GetComponentInChildren<Light2D>().pointLightOuterRadius < 10f)
+        {
+            LevelsController.Instance.Player.GetComponentInChildren<Light2D>().pointLightOuterRadius = Mathf.Lerp(initialGlowRadius, 20f, time / 10f);
+            time += Time.deltaTime;
+            
+            yield return new WaitForSeconds(0);
+        }
+    }
 
     private IEnumerator ActivateUI()
     {

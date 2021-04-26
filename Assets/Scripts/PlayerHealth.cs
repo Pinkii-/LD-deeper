@@ -64,8 +64,6 @@ public class PlayerHealth : MonoBehaviour
 
         slider.value = currentHealth / maxHealth;
         UpdateCharacterLight(currentHealth / maxHealth);
-
-
     }
 
     private void RestoreHealth() 
@@ -101,10 +99,11 @@ public class PlayerHealth : MonoBehaviour
         }
 
         transform.position = lastCheckpoint.transform.position + new Vector3(1, 0 ,0);
-        transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         levelcontroller.RestoreLevel();
         this.GetComponent<PlayerController>().enabled = true;
+        transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         animator.SetBool("isDead", false);
+        animator.SetBool("isMoving", false);
     }
     
     private void UpdateCharacterLight(float value) 

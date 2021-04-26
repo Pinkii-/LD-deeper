@@ -33,13 +33,10 @@ public class BreakingPlatformBehavior : MonoBehaviour
 
     IEnumerator DeactivatePlatform(Collision2D col)
     {
-        Debug.Log("collided with"+ col.gameObject);
         startPlaying = true;
         gameObject.GetComponent<Animation>().Play();
         yield return new WaitForSeconds(breakingTime);
         startPlaying = false;
         gameObject.SetActive(false);
     }
-
-
 }
