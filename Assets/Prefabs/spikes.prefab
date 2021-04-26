@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.42973712, g: 0.21226418, b: 1, a: 0.6039216}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.6039216}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1303,32 +1303,32 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.60784316, g: 0.73549646, b: 1, a: 0}
-        key1: {r: 0.16078432, g: 0.7176471, b: 0.33203602, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
-        key3: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.8349056, g: 0.8893868, b: 1, a: 0}
+        key1: {r: 0.36434695, g: 0.5376392, b: 0.97432214, a: 1}
+        key2: {r: 0.31626022, g: 0.50169384, b: 0.9716981, a: 1}
+        key3: {r: 0.8349056, g: 0.8893868, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 13493
-        ctime1: 35659
-        ctime2: 0
-        ctime3: 0
+        ctime0: 6361
+        ctime1: 27371
+        ctime2: 35466
+        ctime3: 64379
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 9445
-        atime2: 51272
+        atime1: 12722
+        atime2: 53585
         atime3: 65535
-        atime4: 0
+        atime4: 65535
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 4
         m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
@@ -5027,7 +5027,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.27344126, g: 0.18195976, b: 0.8207547, a: 1}
+      maxColor: {r: 0.110137045, g: 0.43560377, b: 0.9339623, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

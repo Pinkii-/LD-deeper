@@ -172,6 +172,7 @@ MonoBehaviour:
   - {fileID: 55490476374765481, guid: 2b29721062ffd4c588b10857c65898ab, type: 3}
   - {fileID: 8682282630049299730, guid: b5930efff1449984e9a6be3d767ae4ad, type: 3}
   - {fileID: 55490476374765481, guid: 420d80fca541edf409641f0f0685e716, type: 3}
+  Player: {fileID: 1888716254806273490}
   finalLevel: {fileID: 8682282630049299730, guid: 3d3f7e8cc9903854aa15a99e4aab6205, type: 3}
   LevelsGoal: 5
 --- !u!1 &717053666
@@ -670,6 +671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+--- !u!1 &1888716254806273490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 97617024981600943, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+  m_PrefabInstance: {fileID: 1888716254806273489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3716125357234014427
 PrefabInstance:
   m_ObjectHideFlags: 0
