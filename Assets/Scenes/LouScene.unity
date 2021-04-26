@@ -537,6 +537,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 808692577}
+    - target: {fileID: 1602911043, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: levelcontroller
+      value: 
+      objectReference: {fileID: 370247471}
     - target: {fileID: 97617024981600943, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_Name
       value: Player

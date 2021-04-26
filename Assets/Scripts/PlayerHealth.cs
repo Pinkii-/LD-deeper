@@ -12,9 +12,11 @@ public class PlayerHealth : MonoBehaviour
     public bool isSafe = true;
     public bool isDead = false;
     public GameObject lastCheckpoint;
+    public LevelsController levelcontroller;
     public Slider slider;
     public SpriteRenderer[] sprites;
     public float decreaseSpeed = 1f;
+    public int secondsDead = 2;
 
     private Animator animator;
     bool healthdrop;
@@ -27,6 +29,10 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        if (levelcontroller == null) 
+        {
+            levelcontroller = GameObject.Find("Levels").GetComponent<LevelsController>();
+        }
         RestoreHealth();
     }
 
@@ -77,10 +83,10 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         animator.SetBool("isDead", true);
-        //TODO: Stop controller for 2 secs.
         this.GetComponent<PlayerController>().enabled = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(secondsDead);
         transform.position = lastCheckpoint.transform.position;
+        levelcontroller.RestoreLevel();
         this.GetComponent<PlayerController>().enabled = true;
         animator.SetBool("isDead", false);
         Debug.Log("You died & rebirth");

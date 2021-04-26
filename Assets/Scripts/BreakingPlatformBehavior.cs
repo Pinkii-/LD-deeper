@@ -37,6 +37,7 @@ public class BreakingPlatformBehavior : MonoBehaviour
         startPlaying = true;
         gameObject.GetComponent<Animation>().Play();
         yield return new WaitForSeconds(breakingTime);
+        startPlaying = false;
         gameObject.SetActive(false);
     }
 

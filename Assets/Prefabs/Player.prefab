@@ -172,6 +172,7 @@ MonoBehaviour:
   isSafe: 1
   isDead: 0
   lastCheckpoint: {fileID: 0}
+  levelcontroller: {fileID: 0}
   slider: {fileID: 0}
   sprites:
   - {fileID: 5174884684198976515}

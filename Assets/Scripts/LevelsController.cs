@@ -178,8 +178,28 @@ public class LevelsController : MonoBehaviour
         }
     }
 
+
+    public void RestoreLevel() {
+
+        int currLevel = NextLevelUnclamped -1;
+        Transform temp = transform.Find("Level_" + currLevel).Find("Platforms");
+        for (int i = 0; i < temp.childCount; i++)
+        {
+            temp.GetChild(i).gameObject.SetActive(true);
+        }
+
+        temp = transform.Find("Level_" + currLevel).Find("Elements");
+        for (int i = 0; i < temp.childCount; i++)
+        {
+            temp.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
     private int GetClampedLevelIndex(int levelIndex)
     {
         return Mathf.Clamp(levelIndex, 0, Levels.Count);
     }
+
+
+
 }
