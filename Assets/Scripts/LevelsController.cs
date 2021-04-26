@@ -48,6 +48,7 @@ public class LevelsController : MonoBehaviour
         NextLevel = 0;
         NextLevelUnclamped = 0;
         LoadNextLevel();
+        AudioManager.audioManagerRef.PlaySound("mainTheme");
     }
     
     public void LoadNextLevel()
@@ -130,7 +131,9 @@ public class LevelsController : MonoBehaviour
         transform.GetChild(0).Find("Elements").gameObject.SetActive(false);
         transform.GetChild(0).Find("Platforms").gameObject.SetActive(false);
         transform.GetChild(0).Find("Checkpoints").gameObject.SetActive(false);
-        
+
+        AudioManager.audioManagerRef.StopSound("mainTheme");
+
         GameObject.Find("Slider").SetActive(false);
         
         Camera.main.GetComponent<CameraController>().ZoomTo(1f);

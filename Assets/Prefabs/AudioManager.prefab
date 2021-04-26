@@ -65,11 +65,11 @@ MonoBehaviour:
     loop: 0
     outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
     source: {fileID: 0}
-  - name: platformMove
-    clip: {fileID: 8300000, guid: 07ec1a8f941d9974581cfed7ab6940be, type: 3}
+  - name: platformBreak
+    clip: {fileID: 8300000, guid: 1e5733e64941500408846e8e3171cf4c, type: 3}
     volume: 1
     pitch: 1
-    loop: 1
+    loop: 0
     outputAudioMixerGroup: {fileID: -2187127085421458398, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
     source: {fileID: 0}
   - name: fireLoop
@@ -87,7 +87,7 @@ MonoBehaviour:
     outputAudioMixerGroup: {fileID: -5004093850179023188, guid: c5f14795f9baf254e974e19c1fa89f8a, type: 2}
     source: {fileID: 0}
   - name: mainTheme
-    clip: {fileID: 8300000, guid: 16e6f7e4da5108f429feaa53e1081855, type: 3}
+    clip: {fileID: 8300000, guid: 2e42be1b7f6e3fe41a28ec05c5ac8a5e, type: 3}
     volume: 1
     pitch: 1
     loop: 1
