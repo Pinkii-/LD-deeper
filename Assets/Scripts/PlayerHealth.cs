@@ -33,6 +33,10 @@ public class PlayerHealth : MonoBehaviour
         {
             levelcontroller = GameObject.Find("Levels").GetComponent<LevelsController>();
         }
+        if (slider == null)
+        {
+            slider = GameObject.Find("Canvas").GetComponentInChildren<Slider>();
+        }
         RestoreHealth();
     }
 
