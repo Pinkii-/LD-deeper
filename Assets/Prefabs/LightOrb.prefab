@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2478911791634865719, guid: e5afa8f3ba494274d8e8bb2b752f0800, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7508311057558940108, guid: e5afa8f3ba494274d8e8bb2b752f0800, type: 3}
       propertyPath: m_Name
       value: lamp
