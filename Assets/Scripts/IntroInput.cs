@@ -14,7 +14,7 @@ public class IntroInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyUp("space"))
         {
             SceneManager.LoadScene("MainScene");
         }
