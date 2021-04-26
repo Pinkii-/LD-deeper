@@ -9,9 +9,9 @@ public class MovingPlatformBehavior : MonoBehaviour
     public float moveSpeed;
     public GameObject platformA;
     public GameObject platformB;
-    public bool towardsB;
     private Vector3 startPosition;
     private Vector3 endPosition;
+    private Vector3 waypoint;
     protected Rigidbody2D rb2d;
     
     void OnEnable()
@@ -21,43 +21,25 @@ public class MovingPlatformBehavior : MonoBehaviour
 
     void Start()
     {
-        towardsB = true;
         startPosition = platformA.transform.position;
         endPosition = platformB.transform.position;
-        StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, moveSpeed));
+        
+        transform.position = startPosition;
+        waypoint = endPosition;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (transform.position == endPosition)
+        var currentPos = transform.position;
+        
+        if (Vector3.Distance(currentPos, waypoint) < 0.05f)
         {
-            StartCoroutine(Vector3LerpCoroutine(gameObject, startPosition, moveSpeed));
-            towardsB = false;
+            waypoint = waypoint == startPosition ? endPosition : startPosition;
         }
-        else if (transform.position == startPosition)
-        {
-            towardsB = true;
-            StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, moveSpeed));
-        }
-    }
-
-    //GameObject moves towards Target and stops when gets to target.
-    IEnumerator Vector3LerpCoroutine(GameObject obj, Vector3 target, float speed)
-    {
-        Vector3 startPosition = rb2d.position;
-        float time = 0f;
-
-        while (obj.transform.position != target)
-        {
-            if (rb2d)
-            {
-                rb2d.position = Vector3.Lerp(startPosition, target,
-                    (time / Vector3.Distance(startPosition, target)) * speed);
-            }
-            time += Time.deltaTime;
-            yield return null;
-        }
+        
+        Vector3 waypointDir = (waypoint - currentPos).normalized;
+        rb2d.MovePosition(currentPos + waypointDir * (moveSpeed * Time.deltaTime));
     }
 
     //Parent player so it moves along with the platform
