@@ -547,6 +547,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_Intensity
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_UseNormalMap
       value: 1
       objectReference: {fileID: 0}
