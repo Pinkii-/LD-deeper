@@ -168,7 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Levels:
   - {fileID: 8682282630049299730, guid: f5540761590298c4fa73185c3fcdf89b, type: 3}
-  - {fileID: 55490476374765481, guid: 2b29721062ffd4c588b10857c65898ab, type: 3}
+  - {fileID: 8682282630049299730, guid: 518bfe44cb59de74b9dd369ae43e38c9, type: 3}
+  - {fileID: 8682282630049299730, guid: 3430f118d28c03e41add1b0e8ee5e442, type: 3}
   finalLevel: {fileID: 0}
   LevelsGoal: 0
 --- !u!1 &717053666
@@ -378,6 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalResolution: 1920
   panSpeed: 2
+  zoomSpeed: 0.5
 --- !u!1 &1703002407
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +559,10 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 808692577}
+    - target: {fileID: 1602911043, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 97617024981600943, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_Name
       value: Player
