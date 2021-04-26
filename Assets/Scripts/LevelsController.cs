@@ -46,16 +46,7 @@ public class LevelsController : MonoBehaviour
         NextLevelUnclamped = 0;
         LoadNextLevel();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            GoLevelDown();
-        }
-    }
-
-    /**TODO: FIX IN ORDER LEVELS CAN HAVE DIFFERENT LENGTHS**/
+    
     public void LoadNextLevel()
     {
         float levelY = 0f;
@@ -96,22 +87,14 @@ public class LevelsController : MonoBehaviour
         if (camCtrl)
         {
             int currentLevelIndex = NextLevelUnclamped - 1;
-            float topOffset = transform.Find("Level_" + currentLevelIndex).GetComponent<LevelController>().cameraBottomOffset;
-            
-            //HideLevel(CurrentLevel);
-            camCtrl.ScrollTo(GetLevelY(currentLevelIndex) + topOffset);
+            ;
+            float currentTopOffset = transform.Find("Level_" + currentLevelIndex).GetComponent<LevelController>().cameraBottomOffset;
 
-            // WIP for perfomance: reposition all objects to y=0
-            /*Vector3 cameraPos = camCtrl.transform.position;
-            float camDiff = cameraPos.y;
-            camCtrl.transform.position = new Vector3(cameraPos.x, 0f, cameraPos.z);
+            float currentLevelY = GetLevelY(currentLevelIndex);
+            float currentLevelH = GetLevelH(currentLevelIndex);
 
-            foreach (Transform level in transform)
-            {
-                level.position = new Vector3(level.position.x, camDiff, level.position.z);
-            }*/
-            
-            //RevealLevel(CurrentLevel);
+            camCtrl.ScrollTo(currentLevelY + currentTopOffset);
+            camCtrl.ZoomTo(currentLevelH + currentTopOffset);
         }
     }
 
@@ -154,31 +137,17 @@ public class LevelsController : MonoBehaviour
         return transform.Find("Level_" + levelIndex).position.y;
     }
 
+    public float GetLevelH(int levelIndex)
+    {
+        return transform.Find("Level_" + levelIndex).Find("Background").GetComponent<SpriteRenderer>().size.y;
+    }
+
     IEnumerator DeferredDestroyChild(Transform child)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.5f);
         Destroy(child.gameObject);
     }
-
-    public void RevealLevel(int levelIndex)
-    {
-        var levelRevealer = Levels[GetClampedLevelIndex(levelIndex)].GetComponentInChildren<LevelController>();
-        if (levelRevealer)
-        {
-            levelRevealer.Reveal();
-        }
-    }
     
-    public void HideLevel(int levelIndex)
-    {
-        var levelRevealer = Levels[GetClampedLevelIndex(levelIndex)].GetComponentInChildren<LevelController>();
-        if (levelRevealer)
-        {
-            levelRevealer.Hide();
-        }
-    }
-
-
     public void RestoreLevel() {
 
         int currLevel = NextLevelUnclamped -1;
@@ -199,7 +168,4 @@ public class LevelsController : MonoBehaviour
     {
         return Mathf.Clamp(levelIndex, 0, Levels.Count);
     }
-
-
-
 }
