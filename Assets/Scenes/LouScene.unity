@@ -548,16 +548,36 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_UseNormalMap
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_BlendStyleIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_LightCookieSprite
       value: 
       objectReference: {fileID: 21300000, guid: 7878c316577d14477a2ac22326aa8f69, type: 3}
     - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_PointLightInnerRadius
-      value: 4.15
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 4.15
+      value: 4.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_ShadowVolumeIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179829146645445141, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: -1925885949
       objectReference: {fileID: 0}
     - target: {fileID: 3235720223127950036, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
       propertyPath: m_LocalRotation.z

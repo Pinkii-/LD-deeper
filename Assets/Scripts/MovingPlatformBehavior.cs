@@ -30,7 +30,6 @@ public class MovingPlatformBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         if (transform.position == endPosition)
         {
             StartCoroutine(Vector3LerpCoroutine(gameObject, startPosition, moveSpeed));
@@ -42,7 +41,6 @@ public class MovingPlatformBehavior : MonoBehaviour
             StartCoroutine(Vector3LerpCoroutine(gameObject, endPosition, moveSpeed));
         }
     }
-
 
     //GameObject moves towards Target and stops when gets to target.
     IEnumerator Vector3LerpCoroutine(GameObject obj, Vector3 target, float speed)

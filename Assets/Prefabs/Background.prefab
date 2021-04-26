@@ -256,15 +256,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6890776565086035339}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShadowGroup: 0
   m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
+  m_UseRendererSilhouette: 0
+  m_CastsShadows: 0
   m_SelfShadows: 0
   m_ApplyToSortingLayers: 00000000
   m_ShapePath:
@@ -274,4 +274,4 @@ MonoBehaviour:
   - {x: -0.5, y: 5, z: 0}
   m_ShapePathHash: -2053769963
   m_Mesh: {fileID: 0}
-  m_InstanceId: -107926
+  m_InstanceId: -363984
