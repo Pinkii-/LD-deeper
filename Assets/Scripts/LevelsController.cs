@@ -128,7 +128,9 @@ public class LevelsController : MonoBehaviour
         level.name = "Level_" + NextLevelUnclamped;
         
         Player.GetComponent<PlayerHealth>().isSafe = true;
-        
+
+        AudioManager.audioManagerRef.StopSound("mainTheme");
+
         //StartCoroutine(MovePlayer());
 
         NextLevel = (NextLevel + 1) % NumLevels;
