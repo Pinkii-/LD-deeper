@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f178431d21fb4ace87855e9a3eed241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fallSecondsToDie: 2
 --- !u!70 &7591501519844200412
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -244,11 +245,11 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.36
   m_Color: {r: 1, g: 0.98060644, b: 0.6179246, a: 1}
-  m_Intensity: 1
-  m_LightVolumeOpacity: 0
+  m_Intensity: 0.8
+  m_LightVolumeOpacity: 0.03
   m_ApplyToSortingLayers: 0000000005f413f30350358d
   m_LightCookieSprite: {fileID: 21300000, guid: 7878c316577d14477a2ac22326aa8f69, type: 3}
-  m_UseNormalMap: 0
+  m_UseNormalMap: 1
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
   m_ShadowIntensity: 0
@@ -257,7 +258,7 @@ MonoBehaviour:
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1.26
   m_PointLightOuterRadius: 4.66
-  m_PointLightDistance: 0.5
+  m_PointLightDistance: 0.73
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
