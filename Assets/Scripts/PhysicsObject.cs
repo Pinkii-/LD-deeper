@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -98,4 +99,6 @@ public class PhysicsObject : MonoBehaviour
 
         rb2d.position = rb2d.position + move.normalized * distance;
     }
+
+    public bool IsGrounded => grounded;
 }

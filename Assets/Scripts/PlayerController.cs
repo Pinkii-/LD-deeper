@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class PlayerController : PhysicsObject
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private bool startedWalking = false;
-    
+
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -37,12 +38,6 @@ public class PlayerController : PhysicsObject
             }
         }
 
-        /*bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
-        if (flipSprite)
-        {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
-        }*/
-        //Transform character = transform.Find("character");
         Transform character = this.transform;
 
         if (move.x < 0f && character.transform.localScale.x > 0f)
@@ -68,8 +63,6 @@ public class PlayerController : PhysicsObject
             runParticles.Play();
             startedWalking = false;
         }
-
-
 
         //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 

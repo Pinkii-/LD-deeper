@@ -56,9 +56,9 @@ public class PlayerHealth : MonoBehaviour
 
 
         //If Health reaches 0 go back to the last checkpoint
-        if (currentHealth <= 0) 
+        if (currentHealth <= 0)
         {
-            StartCoroutine( Die());
+            Die();
         }
 
         slider.value = currentHealth / maxHealth;
@@ -82,22 +82,30 @@ public class PlayerHealth : MonoBehaviour
         healthdrop = false;
     }
 
+    public void Die(bool inmediateRespawn = false)
+    {
+        StartCoroutine(DeferredDie(inmediateRespawn));
+    }
+
     //The moment the player enters in contact with the Checkpoint all values are restored.
-    public IEnumerator Die() 
+    public IEnumerator DeferredDie(bool inmediateRespawn = false) 
     {
         isDead = true;
         animator.SetBool("isDead", true);
         this.GetComponent<PlayerController>().enabled = false;
-        yield return new WaitForSeconds(secondsDead);
-        transform.position = lastCheckpoint.transform.position;
+
+        if (!inmediateRespawn)
+        {
+            yield return new WaitForSeconds(secondsDead);
+        }
+
+        transform.position = lastCheckpoint.transform.position + new Vector3(1, 0 ,0);
+        transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         levelcontroller.RestoreLevel();
         this.GetComponent<PlayerController>().enabled = true;
         animator.SetBool("isDead", false);
-        Debug.Log("You died & rebirth");
     }
-
-
-
+    
     private void UpdateCharacterLight(float value) 
     {
         //Debug.Log( "Update?" + value);

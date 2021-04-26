@@ -88,7 +88,7 @@ public class LevelsController : MonoBehaviour
         {
             int currentLevelIndex = NextLevelUnclamped - 1;
             ;
-            float currentTopOffset = transform.Find("Level_" + currentLevelIndex).GetComponent<LevelController>().cameraBottomOffset;
+            float currentTopOffset = GetLevelOffset(currentLevelIndex);
 
             float currentLevelY = GetLevelY(currentLevelIndex);
             float currentLevelH = GetLevelH(currentLevelIndex);
@@ -132,6 +132,8 @@ public class LevelsController : MonoBehaviour
 
     public int NumLevels => Levels.Count;
 
+    public int CurrentLevel => NextLevelUnclamped - 1;
+
     public float GetLevelY(int levelIndex)
     {
         return transform.Find("Level_" + levelIndex).position.y;
@@ -140,6 +142,11 @@ public class LevelsController : MonoBehaviour
     public float GetLevelH(int levelIndex)
     {
         return transform.Find("Level_" + levelIndex).Find("Background").GetComponent<SpriteRenderer>().size.y;
+    }
+
+    public float GetLevelOffset(int levelIndex)
+    {
+        return transform.Find("Level_" + levelIndex).GetComponent<LevelController>().cameraBottomOffset;
     }
 
     IEnumerator DeferredDestroyChild(Transform child)
