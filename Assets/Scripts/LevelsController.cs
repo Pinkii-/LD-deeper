@@ -46,16 +46,7 @@ public class LevelsController : MonoBehaviour
         NextLevelUnclamped = 0;
         LoadNextLevel();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            GoLevelDown();
-        }
-    }
-
-    /**TODO: FIX IN ORDER LEVELS CAN HAVE DIFFERENT LENGTHS**/
+    
     public void LoadNextLevel()
     {
         float levelY = 0f;
@@ -98,7 +89,6 @@ public class LevelsController : MonoBehaviour
             int currentLevelIndex = NextLevelUnclamped - 1;
             float topOffset = transform.Find("Level_" + currentLevelIndex).GetComponent<LevelController>().cameraBottomOffset;
             
-            //HideLevel(CurrentLevel);
             camCtrl.ScrollTo(GetLevelY(currentLevelIndex) + topOffset);
 
             // WIP for perfomance: reposition all objects to y=0
@@ -110,8 +100,6 @@ public class LevelsController : MonoBehaviour
             {
                 level.position = new Vector3(level.position.x, camDiff, level.position.z);
             }*/
-            
-            //RevealLevel(CurrentLevel);
         }
     }
 
@@ -199,7 +187,4 @@ public class LevelsController : MonoBehaviour
     {
         return Mathf.Clamp(levelIndex, 0, Levels.Count);
     }
-
-
-
 }
