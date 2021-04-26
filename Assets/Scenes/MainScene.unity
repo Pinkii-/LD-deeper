@@ -169,12 +169,12 @@ MonoBehaviour:
   Levels:
   - {fileID: 8682282630049299730, guid: f5540761590298c4fa73185c3fcdf89b, type: 3}
   - {fileID: 8682282630049299730, guid: 518bfe44cb59de74b9dd369ae43e38c9, type: 3}
-  - {fileID: 8682282630049299730, guid: b5930efff1449984e9a6be3d767ae4ad, type: 3}
-  - {fileID: 2951961190046693631, guid: 6e885d3de87a4415883ffc1455b98e37, type: 3}
   - {fileID: 55490476374765481, guid: 2b29721062ffd4c588b10857c65898ab, type: 3}
+  - {fileID: 8682282630049299730, guid: b5930efff1449984e9a6be3d767ae4ad, type: 3}
   - {fileID: 55490476374765481, guid: 420d80fca541edf409641f0f0685e716, type: 3}
+  Player: {fileID: 1888716254806273490}
   finalLevel: {fileID: 8682282630049299730, guid: 3d3f7e8cc9903854aa15a99e4aab6205, type: 3}
-  LevelsGoal: 6
+  LevelsGoal: 5
 --- !u!1 &717053666
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+--- !u!1 &1888716254806273490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 97617024981600943, guid: f4a8df42f42884648ab1b374e83ed98d, type: 3}
+  m_PrefabInstance: {fileID: 1888716254806273489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3716125357234014427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,6 +683,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 205188100, guid: aa9220572953ab444ac7555b5029ee44, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -190
+      objectReference: {fileID: 0}
+    - target: {fileID: 205188100, guid: aa9220572953ab444ac7555b5029ee44, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 403004496, guid: aa9220572953ab444ac7555b5029ee44, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3716125356034575476, guid: aa9220572953ab444ac7555b5029ee44, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
