@@ -170,7 +170,8 @@ MonoBehaviour:
   - {fileID: 2951961190046693631, guid: 6e885d3de87a4415883ffc1455b98e37, type: 3}
   - {fileID: 55490476374765481, guid: 2b29721062ffd4c588b10857c65898ab, type: 3}
   - {fileID: 55490476374765481, guid: 420d80fca541edf409641f0f0685e716, type: 3}
-  LevelsGoal: 2
+  finalLevel: {fileID: 8682282630049299730, guid: 3d3f7e8cc9903854aa15a99e4aab6205, type: 3}
+  LevelsGoal: 3
 --- !u!1 &717053666
 GameObject:
   m_ObjectHideFlags: 0

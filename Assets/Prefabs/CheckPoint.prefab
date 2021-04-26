@@ -112,7 +112,7 @@ MonoBehaviour:
   - {x: 5, y: 0, z: 0}
   m_ShapePathHash: 1117800437
   m_Mesh: {fileID: 0}
-  m_InstanceId: -16846
+  m_InstanceId: 143532
 --- !u!61 &4977939659189299961
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56e648efb9330be41a8345307e4faff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToGoDown: 1
   type: 0
   isLit: 0
 --- !u!1 &8571103778879182105
@@ -240,6 +241,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8297533357369140359, guid: 5c1f76064463e2b4798536a85f16ea4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8396568073221163354, guid: 5c1f76064463e2b4798536a85f16ea4c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -298,6 +303,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4977939659189299942}
     m_Modifications:
+    - target: {fileID: 1334795197261382711, guid: 7a2a26f397cc3d542a1decb37ff00785, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6335746506884268505, guid: 7a2a26f397cc3d542a1decb37ff00785, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7279995557077355181, guid: 7a2a26f397cc3d542a1decb37ff00785, type: 3}
       propertyPath: m_Name
       value: checkpoint 1

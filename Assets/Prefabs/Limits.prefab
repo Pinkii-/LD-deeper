@@ -72,13 +72,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 70284854914b67b4390b4d1b7c98b321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 10, y: 19}
   m_AdaptiveModeThreshold: 0.16
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
   - {x: -0.5, y: 0.5, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 39168
+  m_InstanceId: 138710
 --- !u!61 &2913538185530476880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -128,13 +128,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 4.61, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.12, y: 15.12}
-    newSize: {x: 10, y: 20}
+    newSize: {x: 10, y: 19}
     adaptiveTilingThreshold: 0.16
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 10, y: 19}
   m_EdgeRadius: 0
 --- !u!1 &2913538186806947206
 GameObject:
@@ -208,13 +208,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 70284854914b67b4390b4d1b7c98b321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 10, y: 19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -245,7 +245,7 @@ MonoBehaviour:
   - {x: -0.5, y: 5, z: 0}
   m_ShapePathHash: -2053769963
   m_Mesh: {fileID: 0}
-  m_InstanceId: 39176
+  m_InstanceId: 138718
 --- !u!61 &2913538186806947258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,13 +264,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 4.61, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.12, y: 15.12}
-    newSize: {x: 10, y: 20}
+    newSize: {x: 10, y: 19}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 20}
+  m_Size: {x: 10, y: 19}
   m_EdgeRadius: 0
 --- !u!1 &8314398555832547346
 GameObject:

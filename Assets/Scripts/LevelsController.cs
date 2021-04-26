@@ -8,6 +8,7 @@ using Object = System.Object;
 public class LevelsController : MonoBehaviour
 {
     public List<Transform> Levels;
+    public Transform finalLevel;
     public int LevelsGoal = 0;
     
     [ReadOnly] private int NextLevel;
@@ -54,10 +55,10 @@ public class LevelsController : MonoBehaviour
         }
     }
 
+    /**TODO: FIX IN ORDER LEVELS CAN HAVE DIFFERENT LENGTHS**/
     public void LoadNextLevel()
     {
         float levelY = 0f;
-
         if (NextLevelUnclamped < LevelsGoal)
         {
             if (transform.childCount == 2)
@@ -119,6 +120,31 @@ public class LevelsController : MonoBehaviour
         Debug.Log("YOU WIN MADAFACA!");
         // Para hacer restart debería ser suficiente con llamar la función Init(). 
         // ...
+        float levelY = 0f;
+
+        if (transform.childCount == 2)
+        {
+            var toDelete = transform.GetChild(0);
+            toDelete.parent = null;
+            StartCoroutine(DeferredDestroyChild(toDelete));
+        }
+
+        if (transform.childCount == 1)
+        {
+            var prevLevelY = Mathf.Abs(transform.GetChild(0).position.y);
+            var prevLevelH = transform.GetChild(0).Find("Background").GetComponent<SpriteRenderer>().size.y;
+            levelY = prevLevelY + prevLevelH;
+        }
+
+        var level = Instantiate(finalLevel,
+            new Vector3(0, -levelY, 0),
+            Quaternion.identity,
+            gameObject.transform);
+
+        level.name = "Level_" + NextLevelUnclamped;
+
+        NextLevel = (NextLevel + 1) % NumLevels;
+        NextLevelUnclamped++;
     }
 
     public int NumLevels => Levels.Count;
