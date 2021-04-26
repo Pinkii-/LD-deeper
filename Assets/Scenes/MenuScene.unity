@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 88387194927031597, guid: c848339c0ee738e498306d0fcba0c683, type: 3}
       propertyPath: m_Text
-      value: "Move: \tA D\nJump: \tSpace\nExit: \tEsc\n"
+      value: "Move: \tA/Left,  D/Right\nJump: \tSpace\nExit: \tEsc\n"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c848339c0ee738e498306d0fcba0c683, type: 3}
