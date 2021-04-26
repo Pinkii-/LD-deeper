@@ -41,8 +41,7 @@ public class EndingBehavior : MonoBehaviour
             treelight.SetActive(true);
             other.GetComponentInChildren<Animator>().SetBool("isDead", true);
             StartCoroutine(ActivateUI());
-         
-
+            AudioManager.audioManagerRef.PlaySound("melodyEnding");
         }
 
     }

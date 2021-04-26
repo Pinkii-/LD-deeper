@@ -22,7 +22,7 @@ public class SpikeBehavior : MonoBehaviour
         if (other.GetComponent<PlayerHealth>() != null)
         {
             other.GetComponent<PlayerHealth>().Die();
-            AudioManager.audioManagerRef.PlaySound("spike");
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("spike");
         }
     }
 }
