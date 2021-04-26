@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpikeBehavior : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class SpikeBehavior : MonoBehaviour
         if (other.GetComponent<PlayerHealth>() != null)
         {
             other.GetComponent<PlayerHealth>().Die();
+            AudioManager.audioManagerRef.PlaySoundWithRandomPitch("spike");
         }
     }
 }

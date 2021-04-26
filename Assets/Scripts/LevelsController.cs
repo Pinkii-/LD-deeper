@@ -48,6 +48,7 @@ public class LevelsController : MonoBehaviour
         NextLevel = 0;
         NextLevelUnclamped = 0;
         LoadNextLevel();
+        
     }
     
     public void LoadNextLevel()

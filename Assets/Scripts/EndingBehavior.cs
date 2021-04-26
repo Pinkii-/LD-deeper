@@ -44,6 +44,8 @@ public class EndingBehavior : MonoBehaviour
             StartCoroutine(ActivateUI());
 
             GameObject.Find("Slider").SetActive(false);
+            
+            AudioManager.audioManagerRef.PlaySound("melodyEnding");
 
             Camera.main.GetComponent<CameraController>().zoomSpeed = 0.1f;
             Camera.main.GetComponent<CameraController>().ZoomTo(8f);
