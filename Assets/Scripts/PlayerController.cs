@@ -51,7 +51,7 @@ public class PlayerController : PhysicsObject
 
         //Animation values
         animator.SetBool("isMoving", move.x != 0);
-        animator.SetBool("isJumping", velocity.y != 0);
+        animator.SetBool("isJumping", !IsGrounded);
 
         if (move.x == 0) 
         {

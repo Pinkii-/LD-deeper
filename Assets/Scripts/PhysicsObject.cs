@@ -19,6 +19,8 @@ public class PhysicsObject : MonoBehaviour
 
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
+    
+    public bool IsGrounded => grounded;
 
     void OnEnable()
     {
@@ -99,6 +101,4 @@ public class PhysicsObject : MonoBehaviour
 
         rb2d.position = rb2d.position + move.normalized * distance;
     }
-
-    public bool IsGrounded => grounded;
 }
